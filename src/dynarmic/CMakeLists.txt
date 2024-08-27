@@ -261,6 +261,20 @@ if ("A64" IN_LIST DYNARMIC_FRONTENDS)
     )
 endif()
 
+if ("R4300" IN_LIST DYNARMIC_FRONTENDS)
+    target_sources(dynarmic PRIVATE
+        frontend/R4300/r4300_types.h
+        frontend/R4300/r4300_types.cpp
+        frontend/R4300/r4300_ir_emitter.cpp
+        frontend/R4300/decoder/r4300.h
+        frontend/R4300/decoder/r4300.inc
+        frontend/R4300/translate/impl/impl.cpp
+        frontend/R4300/translate/impl/data_processing_bitfield.cpp
+        frontend/R4300/translate/impl/data_processing_addsub.cpp
+        frontend/R4300/translate/r4300_translate.cpp
+    )
+endif()
+
 if ("x86_64" IN_LIST ARCHITECTURE)
     target_link_libraries(dynarmic
         PRIVATE

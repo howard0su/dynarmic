@@ -34,6 +34,11 @@ Value::Value(A64::Reg value)
     inner.imm_a64regref = value;
 }
 
+Value::Value(R4300::Reg value)
+        : type(Type::R4300Reg) {
+    inner.imm_r4300regref = value;
+}
+
 Value::Value(A64::Vec value)
         : type(Type::A64Vec) {
     inner.imm_a64vecref = value;

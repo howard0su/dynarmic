@@ -33,6 +33,7 @@ enum class Type {
     Cond = 1 << 13,
     Table = 1 << 14,
     AccType = 1 << 15,
+    R4300Reg = 1 << 16,
 };
 
 constexpr Type operator|(Type a, Type b) {

@@ -33,6 +33,13 @@ if ("A64" IN_LIST DYNARMIC_FRONTENDS)
     )
 endif()
 
+if ("R4300" IN_LIST DYNARMIC_FRONTENDS)
+    target_sources(dynarmic_tests PRIVATE
+        R4300/r4300.cpp
+        R4300/testenv.h
+    )
+endif()
+
 if (DYNARMIC_TESTS_USE_UNICORN)
     target_link_libraries(dynarmic_tests PRIVATE Unicorn::Unicorn)
 

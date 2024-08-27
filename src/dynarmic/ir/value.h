@@ -23,6 +23,10 @@ enum class Reg;
 enum class Vec;
 }  // namespace Dynarmic::A64
 
+namespace Dynarmic::R4300 {
+enum class Reg;
+}  // namespace Dynarmic::A64
+
 namespace Dynarmic::IR {
 
 class Inst;
@@ -44,6 +48,7 @@ public:
     explicit Value(A32::ExtReg value);
     explicit Value(A64::Reg value);
     explicit Value(A64::Vec value);
+    explicit Value(R4300::Reg value);
     explicit Value(bool value);
     explicit Value(u8 value);
     explicit Value(u16 value);
@@ -139,6 +144,7 @@ private:
         A32::ExtReg imm_a32extregref;
         A64::Reg imm_a64regref;
         A64::Vec imm_a64vecref;
+        R4300::Reg imm_r4300regref;
         bool imm_u1;
         u8 imm_u8;
         u16 imm_u16;

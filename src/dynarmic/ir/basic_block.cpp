@@ -16,6 +16,7 @@
 #include "dynarmic/common/memory_pool.h"
 #include "dynarmic/frontend/A32/a32_types.h"
 #include "dynarmic/frontend/A64/a64_types.h"
+#include "dynarmic/frontend/R4300/r4300_types.h"
 #include "dynarmic/ir/cond.h"
 #include "dynarmic/ir/opcodes.h"
 
