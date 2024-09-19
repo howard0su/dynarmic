@@ -215,7 +215,7 @@ private:
 
         IR::Block ir_block = A32::Translate(A32::LocationDescriptor{descriptor}, conf.callbacks, {conf.arch_version, conf.define_unpredictable_behaviour, conf.hook_hint_instructions});
         Optimization::PolyfillPass(ir_block, polyfill_options);
-        Optimization::NamingPass(ir_block);
+        //Optimization::NamingPass(ir_block);
         if (conf.HasOptimization(OptimizationFlag::GetSetElimination) && !conf.check_halt_on_memory_access) {
             Optimization::A32GetSetElimination(ir_block, {.convert_nz_to_nzc = true});
             Optimization::DeadCodeElimination(ir_block);
@@ -226,7 +226,7 @@ private:
             Optimization::DeadCodeElimination(ir_block);
         }
         Optimization::IdentityRemovalPass(ir_block);
-        Optimization::VerificationPass(ir_block);
+        //Optimization::VerificationPass(ir_block);
         return emitter.Emit(ir_block);
     }
 

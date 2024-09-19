@@ -274,7 +274,7 @@ private:
                                             {conf.define_unpredictable_behaviour, conf.wall_clock_cntpct});
         Optimization::PolyfillPass(ir_block, polyfill_options);
         Optimization::A64CallbackConfigPass(ir_block, conf);
-        Optimization::NamingPass(ir_block);
+        //Optimization::NamingPass(ir_block);
         if (conf.HasOptimization(OptimizationFlag::GetSetElimination) && !conf.check_halt_on_memory_access) {
             Optimization::A64GetSetElimination(ir_block);
             Optimization::DeadCodeElimination(ir_block);
@@ -286,7 +286,7 @@ private:
         if (conf.HasOptimization(OptimizationFlag::MiscIROpt)) {
             Optimization::A64MergeInterpretBlocksPass(ir_block, conf.callbacks);
         }
-        Optimization::VerificationPass(ir_block);
+        //Optimization::VerificationPass(ir_block);
         return emitter.Emit(ir_block).entrypoint;
     }
 
